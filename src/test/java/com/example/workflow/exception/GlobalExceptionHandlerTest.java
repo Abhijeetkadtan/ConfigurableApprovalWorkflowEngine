@@ -14,7 +14,7 @@ class GlobalExceptionHandlerTest {
 
         WorkflowException ex = new WorkflowException("Invalid state transition");
 
-        ResponseEntity<?> response = handler.handleWorkflow(ex);
+        ResponseEntity<?> response = handler.handleWorkflowException(ex);
 
         assertEquals(400, response.getStatusCode().value());
         assertNotNull(response.getBody());
